@@ -6,6 +6,6 @@
 - Code Challenges (In-class exercise)
 
 # Class Videos
-- [Part 1](https://youtu.be/UbyCcPwovj8)
-- [Part 2](https://youtu.be/mlBTvaMUPdI)
-- [Part 3](https://youtu.be/NACbrtNQIFo)
+[Part 1]()
+[Part 2]()
+[Part 3]()

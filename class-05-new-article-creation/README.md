@@ -15,6 +15,6 @@ For your portfolio, pair up to do some code review with your classmates.
  - Syntax highlighting: https://github.com/isagalaev/highlight.js
 
 ## Class Videos
- - [Part 1 of 3](https://youtu.be/o4BDMadEgyg)
- - [Part 2 of 3](https://youtu.be/ufUUfiSQBI4)
- - [Part 3 of 3](https://youtu.be/idQ9sIg1Gms)
+[Part 1]()
+[Part 2]()
+[Part 3]()

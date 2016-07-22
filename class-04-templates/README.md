@@ -11,9 +11,10 @@ Templates have some advantages over direct DOM manipulation. Leverage those stre
 As we get more sophisticated, this is a good time to ensure our CSS styles are well organized. We'll follow the SMACSS system for keeping everything in it's proper place.
 
 ## Class videos
-- [Part 1 of 3](https://youtu.be/WFNzs5vKRjA)
-- [Part 2 of 3](https://youtu.be/JlEAMH6wKCE)
-- [Part 3 of 3](https://youtu.be/fKnwc8PjH7c)
+[Part 1]()
+[Part 2]()
+[Part 3]()
+
 
 ## Useful Resources
  - [Google Fonts](www.google.com/fonts)

@@ -37,8 +37,6 @@ Write your own user stories as you explore the new code base.
  - Use AJAX to load any significant data sources.  - Cache data where appropriate.
 
  ## Class Videos
- [Part 1](https://youtu.be/HZOfogGD8GU)
-
- [Part 2](https://youtu.be/8VPmsimv7xI)
-
- [Part 3](https://youtu.be/RCS2vHOZiWk)
+ [Part 1]()
+ [Part 2]()
+ [Part 3]()

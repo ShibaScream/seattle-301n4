@@ -21,6 +21,6 @@
 Asynchronous connections and standardized data formats? This all sounds like a serious upgrade to our application logic! Let's see what you can do with the app, once we apply these concepts.
 
 ## Class Videos
-[Part 1](https://youtu.be/G2Xm-uqNl50)
-[Part 2](https://youtu.be/uvb8vMSE7o8)
-[Part 3](https://youtu.be/UFmomlC-J6c)
+[Part 1]()
+[Part 2]()
+[Part 3]()

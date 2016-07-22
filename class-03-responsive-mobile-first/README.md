@@ -28,6 +28,6 @@ Then, see how you can apply these same ideas in your portfolio!
  - Example extra-fancy responsive hamburger: http://www.sitepoint.com/pure-css-off-screen-navigation-menu/
 
 ## Class Videos
-- Part 1: https://youtu.be/Tf6hqSRbgOo
-- Part 2: https://youtu.be/4T4xluVkDrM
-- Part 3: https://youtu.be/AteSzZn2bO0
+[Part 1]()
+[Part 2]()
+[Part 3]()

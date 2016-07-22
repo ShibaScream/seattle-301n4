@@ -21,6 +21,6 @@ We will use jQuery's event handling APIs to make this happen, rather than the va
  - Color selection help: http://paletton.com
 
 ## Class Videos
-- Part 1: https://youtu.be/Ninm84xG7Lk
-- Part 2: https://youtu.be/vgEbGEc0yDc
-- Part 3: https://youtu.be/MLKaC8ah23Q
+ [Part 1]()
+ [Part 2]()
+ [Part 3]()

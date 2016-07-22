@@ -17,6 +17,6 @@ Databases power web applications everywhere by enabling them to persist, modify,
  - [Query String Primer](https://en.wikipedia.org/wiki/Query_string)
 
 ## Videos
-- [Part 1](https://youtu.be/6zdiV6zHkZE)
-- [Part 2](https://youtu.be/T83dKPg7SBk)
-- [Part 3](https://youtu.be/sw9FLTlWyFw)
+[Part 1]()
+[Part 2]()
+[Part 3]()

@@ -14,8 +14,6 @@ At the heart of every web app is the Web Request-Response Cycle. Pay close atten
 - Page.js docs: https://visionmedia.github.io/page.js
 
 ## Class Videos
-[Part 1](https://youtu.be/oY7rkSTfvhc)
-
-[Part 2](https://youtu.be/3qavMvb1_3I)
-
-[Part 3](https://youtu.be/URQV_L0fwjA)
+[Part 1]()
+[Part 2]()
+[Part 3]()
