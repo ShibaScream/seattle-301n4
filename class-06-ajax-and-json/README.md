@@ -8,9 +8,9 @@
   - DNS
   - HTTP Status Codes
   - Request
-    - URL Method Headers
+    - URL, Method, Headers
   - Response
-    - Status Headers Body
+    - Status, Headers, Body
   - Network Tab - Dev console
 3. JSON Review
   - What is it? Why/How to use it?
