@@ -64,7 +64,7 @@
           Welcome to my Blog
         </header>
         <section>
-          <h1>Some of my intrests:</h1>
+          <h1>Some of my interests:</h1>
           <ul>
             <li>Coding</li>
             <li>Sharing what I've learned</li>
@@ -83,9 +83,7 @@
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script>
-      // TODO: The fetchAll method call now requires a callback parameter.
-      // What do we want to run WHEN this method is done?
-      Article.fetchAll(); // Add an argument to the function call.
+      window.Article.fetchAll(window.articleView.initIndexPage);
     </script>
   </body>
 </html>

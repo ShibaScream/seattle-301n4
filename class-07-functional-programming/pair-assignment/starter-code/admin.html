@@ -34,6 +34,8 @@
     <main class="clearfix">
       <h1>Blog Stats</h1>
       <section id="blog-stats">
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt  -->
+        <!-- MDN says that this needs to be inside a <dl> element! -->
         <dt>Total articles:</dt> <dd class="articles"></dd>
         <dt>Total words:</dt> <dd class="words"></dd>
         <h2>Author Stats</h2>
@@ -52,8 +54,7 @@
     <script src="/scripts/article.js"></script>
     <script src="/scripts/articleView.js"></script>
     <script>
-      // TODO: After we fetch and load all the articles, what view function do we want to run next?
-      // Let's pass in a callback function, to determine what happens AFTER all articles are loaded.
+      window.Article.fetchAll(articleView.initAdminPage);
     </script>
   </body>
 </html>
