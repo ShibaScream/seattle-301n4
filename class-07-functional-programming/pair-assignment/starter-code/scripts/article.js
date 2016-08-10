@@ -53,7 +53,7 @@
   // TODO: Chain together a `map` and a `reduce` call to get a rough count of all words in all articles.
   Article.numWordsAll = function () {
     return Article.all.map(function (article) {
-      return article.body.split(' ').length; // Get the total number of words in this article
+      return article.body.replace( /\n/g, " " ).split(' ').length; // Get the total number of words in this article
     })
     .reduce(function (a, b) {
       return a + b; // Sum up all the values in the collection
@@ -75,11 +75,10 @@
     return Article.allAuthors().map(function (author) {
       return {
         name: author,
-        numWords: Article.all
-        .map(function (article) {
-          if (article.author === author) {
-            return article.body.split(' ').length;
-          }
+        numWords: Article.all.filter(function(article) {
+          return article.author === author;
+        }).map(function (article) {
+            return article.body.replace( /\n/g, " " ).split(' ').length;
         }).reduce(function (a, b) {
           return a + b;
         }, 0)
