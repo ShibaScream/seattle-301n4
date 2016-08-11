@@ -1,3 +1,9 @@
+# Class 10
+
+## Daily Plan
+- server.js: what is it?
+- 201 group refactor
+
 # Assignment for Class 10 - Pair Project
 
 Apply what you've learned. With a pair, dive into a new code base. Learn your way around, and refactor the app with the principles you've learned over the past 2 weeks.
