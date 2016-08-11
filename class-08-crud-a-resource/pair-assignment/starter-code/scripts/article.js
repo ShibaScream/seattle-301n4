@@ -21,7 +21,7 @@
 
   Article.createTable = function(callback) {
     webDB.execute(
-      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY ASC, title VARCHAR(100) NOT NULL, category VARCHAR(100) NOT NULL, author VARCHAR(100) NOT NULL, authorURL VARCHAR(200) NOT NULL, publishedOn DATE, body TEXT);', // what SQL command do we run here inside these quotes?
+      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY ASC, title VARCHAR(100) NOT NULL, category VARCHAR(100) NOT NULL, author VARCHAR(100) NOT NULL, authorURL VARCHAR(200) NOT NULL, publishedOn DATE, body TEXT);',
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
