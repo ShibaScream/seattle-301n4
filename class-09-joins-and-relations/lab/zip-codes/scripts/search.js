@@ -19,6 +19,9 @@
             ],
             function (rows) {
               searchView.loadAll('city-select', 'city', rows);
+              $('#city-select').on('change', function() {
+                //add marker drop
+              });
             }
           );
         }
@@ -41,5 +44,25 @@
       $filter.append(optiontag);
     });
   };
+
+  $('#search').on('submit', function(event) {
+    event.preventDefault();
+    var $result = $('input[name="zip"]').val();
+    console.log($result);
+//add integer validation
+    webDB.execute(
+      [
+        {
+          'sql':'SELECT * FROM zips WHERE zip = ?;',
+          'data': [$result]
+        }
+      ],
+      function(rows) {
+        console.log(rows);  //marker drop
+      }
+    );
+  });
+
+
   searchView.populateFilters();
 })(window);
