@@ -1,5 +1,7 @@
 function initMap() {
   
+  // HI JR
+  
   var styles = [
 
       // hide Google's labels
