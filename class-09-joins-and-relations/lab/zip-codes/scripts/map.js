@@ -52,6 +52,14 @@ function hideLastInfoWindow() {
   }
 }
 
+function removeMarkers() {
+  markers.forEach(function (marker) {
+    marker.setMap(null);
+  });
+  
+  markers = [];
+}
+
 function createMarker(data) {
   var position = {
     lat: data.latitude,
@@ -59,7 +67,9 @@ function createMarker(data) {
   };
 
   var label = data.city + ', ' + data.state;
-
+  
+  var content = '<h3>Name: ' + label + '</h3><ul><li>Population: ' + data.population + '</li><li>Zip Code: ' + data.zip + '</li><li>Latitude: ' + data.latitude + '</li><li>Longitude: ' + data.longitude + '</li></ul>';
+  
   var marker = new google.maps.Marker({
     position: position,
     animation: google.maps.Animation.DROP,
@@ -68,7 +78,7 @@ function createMarker(data) {
   });
   
   var infoWindow = new google.maps.InfoWindow({
-    content: label
+    content: content
   });
   
   window.mapobj.panTo(position);
@@ -78,6 +88,8 @@ function createMarker(data) {
     infoWindow.open(window.mapobj, marker);
     lastOpenInfoWindow = infoWindow;
   });
+  
+  markers.push(marker);
   
   marker.setMap(window.mapobj);
 

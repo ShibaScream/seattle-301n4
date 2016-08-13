@@ -75,6 +75,7 @@
 
       function (rows) {
         if (rows.length > 0) {
+          removeMarkers();
           rows.forEach(function (row) {
             createMarker(row);
           });
