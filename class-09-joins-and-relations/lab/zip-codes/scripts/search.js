@@ -1,9 +1,7 @@
 (function (module) {
 
-  // TODO: Write the code to populate your filters, and enable the search queries here in search.js
-  // TODO: You will also interact with the map.js file here
   var searchView = {};
-  
+
   searchView.populateFilters = function () {
     webDB.execute('SELECT state FROM zips;', function (rows) {
       searchView.loadAll('state-select', 'state', rows);
@@ -31,8 +29,6 @@
           );
         }
       });
-        // EVENT LISTENER calls webDB.execute to select cities from zip where state equals return value from event listener
-          // run loadAll to add cities to filter
     });
   };
 
@@ -53,8 +49,7 @@
   $('#search').on('submit', function (event) {
     event.preventDefault();
     var $result = $('input[name="zip"]').val();
-    //add integer validation
-    if (typeof ($result) !== "number" && $result.toString().length !== 5) {
+    if (typeof ($result) !== 'number' && $result.toString().length !== 5) {
       alert('Not a proper 5 digit zip code. Please try again!');
     } else {
       searchView.searchAndAddMarker(['zip'], [$result]);
@@ -69,7 +64,7 @@
       }
       return prev + current;
     }, '');
-    
+
     webDB.execute(
       [
         {
@@ -77,8 +72,8 @@
           'data': filtersArr
         }
       ],
+
       function (rows) {
-        
         if (rows.length > 0) {
           rows.forEach(function (row) {
             createMarker(row);
@@ -89,6 +84,6 @@
       }
     );
   };
-  
+
   searchView.populateFilters();
 })(window);

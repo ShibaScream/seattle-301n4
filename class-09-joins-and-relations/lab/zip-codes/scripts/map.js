@@ -2,15 +2,15 @@ var lastOpenInfoWindow,
   markers = [];
 
 function initMap() {
-  
+
   // HI JR
-  
+
   var styles = [
 
     // hide Google's labels
     {
-      featureType: "all",
-      elementType: "labels",
+      featureType: 'all',
+      elementType: 'labels',
       stylers: [
         {visibility: "off"}
       ]
@@ -18,15 +18,15 @@ function initMap() {
 
     // hide roads
     {
-      featureType: "road",
-      elementType: "geometry",
+      featureType: 'road',
+      elementType: 'geometry',
       stylers: [
         {visibility: "off"}
       ]
     }
 
   ];
-  
+
   var options = {
     center: {lat: 47.611435, lng: -122.330456},
     disableDefaultUI: true,
@@ -38,7 +38,7 @@ function initMap() {
     zoomControl: true,
     scrollwheel: true
   };
-  
+
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), options);
 
@@ -53,14 +53,13 @@ function hideLastInfoWindow() {
 }
 
 function createMarker(data) {
-  // TODO: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
   var position = {
     lat: data.latitude,
     lng: data.longitude
   };
-  
+
   var label = data.city + ', ' + data.state;
-  
+
   var marker = new google.maps.Marker({
     position: position,
     animation: google.maps.Animation.DROP,
@@ -81,5 +80,5 @@ function createMarker(data) {
   });
   
   marker.setMap(window.mapobj);
-  
+
 }
