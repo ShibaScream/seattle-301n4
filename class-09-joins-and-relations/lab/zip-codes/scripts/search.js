@@ -10,7 +10,7 @@
       // ADD event listener to state
       $('#state-select').on('change', function() {
         $('#city-select').val('');
-        $('#city-select').slice(1).remove();
+        $('#city-select option:first-child').siblings().remove();
         var $state = $(this).val();
         if ($state.length > 0) {
           webDB.execute(
@@ -54,7 +54,11 @@
     event.preventDefault();
     var $result = $('input[name="zip"]').val();
     //add integer validation
-    searchView.searchAndAddMarker(['zip'], [$result]);
+    if (typeof($result) !== "number" && $result.toString().length !== 5) {
+      alert('Not a proper 5 digit zip code. Please try again!');
+    } else {
+      searchView.searchAndAddMarker(['zip'], [$result]);
+    }
   });
 
   searchView.searchAndAddMarker = function (joinsArr, filtersArr) {
@@ -66,8 +70,6 @@
       return prev + current
     }, '');
     
-    console.log(parameters);
-    
     webDB.execute(
       [
         {
@@ -76,12 +78,14 @@
         }
       ],
       function(rows) {
-        // DEBUG
-        console.log(rows);
-        //marker drop
-        rows.forEach(function(row) {
-          createMarker(row);
-        });
+        
+        if (rows.length > 0) {
+          rows.forEach(function(row) {
+            createMarker(row);
+          });
+        } else {
+          alert("Hmm. Appears you don't have any results. :(")
+        }
     });
   };
   
