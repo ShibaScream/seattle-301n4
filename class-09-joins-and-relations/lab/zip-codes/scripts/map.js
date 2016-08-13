@@ -1,3 +1,6 @@
+var lastOpenInfoWindow,
+  markers = [];
+
 function initMap() {
   
   // HI JR
@@ -9,7 +12,7 @@ function initMap() {
       featureType: "all",
       elementType: "labels",
       stylers: [
-          {visibility: "off"}
+        {visibility: "off"}
       ]
     },
 
@@ -18,7 +21,7 @@ function initMap() {
       featureType: "road",
       elementType: "geometry",
       stylers: [
-          {visibility: "off"}
+        {visibility: "off"}
       ]
     }
 
@@ -42,6 +45,13 @@ function initMap() {
   window.mapobj = map;
 }
 
+function hideLastInfoWindow() {
+  if (lastOpenInfoWindow) {
+    lastOpenInfoWindow.close();
+    lastOpenInfoWindow = null;
+  }
+}
+
 function createMarker(data) {
   // TODO: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
   var position = {
@@ -58,7 +68,17 @@ function createMarker(data) {
     title: label
   });
   
+  var infoWindow = new google.maps.InfoWindow({
+    content: label
+  });
+  
   window.mapobj.panTo(position);
+  
+  marker.addListener('click', function () {
+    hideLastInfoWindow();
+    infoWindow.open(window.mapobj, marker);
+    lastOpenInfoWindow = infoWindow;
+  });
   
   marker.setMap(window.mapobj);
   
