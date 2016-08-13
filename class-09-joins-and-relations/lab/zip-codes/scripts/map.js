@@ -1,29 +1,29 @@
 function initMap() {
-  
+
   // HI JR
-  
+
   var styles = [
 
     // hide Google's labels
     {
-      featureType: "all",
-      elementType: "labels",
+      featureType: 'all',
+      elementType: 'labels',
       stylers: [
-          {visibility: "off"}
+          {visibility: 'off'}
       ]
     },
 
     // hide roads
     {
-      featureType: "road",
-      elementType: "geometry",
+      featureType: 'road',
+      elementType: 'geometry',
       stylers: [
-          {visibility: "off"}
+          {visibility: 'off'}
       ]
     }
 
   ];
-  
+
   var options = {
     center: {lat: 47.611435, lng: -122.330456},
     disableDefaultUI: true,
@@ -35,7 +35,7 @@ function initMap() {
     zoomControl: true,
     scrollwheel: true
   };
-  
+
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), options);
 
@@ -48,18 +48,18 @@ function createMarker(data) {
     lat: data.latitude,
     lng: data.longitude
   };
-  
+
   var label = data.city + ', ' + data.state;
-  
+
   var marker = new google.maps.Marker({
     position: position,
     animation: google.maps.Animation.DROP,
     maps: window.mapobj,
     title: label
   });
-  
+
   window.mapobj.panTo(position);
-  
+
   marker.setMap(window.mapobj);
-  
+
 }

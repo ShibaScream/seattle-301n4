@@ -3,7 +3,7 @@
   // TODO: Write the code to populate your filters, and enable the search queries here in search.js
   // TODO: You will also interact with the map.js file here
   var searchView = {};
-  
+
   searchView.populateFilters = function () {
     webDB.execute('SELECT state FROM zips;', function(rows) {
       searchView.loadAll('state-select', 'state', rows);
@@ -54,7 +54,7 @@
     event.preventDefault();
     var $result = $('input[name="zip"]').val();
     //add integer validation
-    if (typeof($result) !== "number" && $result.toString().length !== 5) {
+    if (typeof($result) !== 'number' && $result.toString().length !== 5) {
       alert('Not a proper 5 digit zip code. Please try again!');
     } else {
       searchView.searchAndAddMarker(['zip'], [$result]);
@@ -67,9 +67,9 @@
       if (index > 0) {
         current = ' AND ' + current;
       }
-      return prev + current
+      return prev + current;
     }, '');
-    
+
     webDB.execute(
       [
         {
@@ -78,16 +78,16 @@
         }
       ],
       function(rows) {
-        
+
         if (rows.length > 0) {
           rows.forEach(function(row) {
             createMarker(row);
           });
         } else {
-          alert("Hmm. Appears you don't have any results. :(")
-        }
-    });
+          alert('Hmm. Appears you don\'t have any results. :(');
+        };
+      });
   };
-  
+
   searchView.populateFilters();
 })(window);
