@@ -58,7 +58,11 @@
         }
       ],
       function(rows) {
-        console.log(rows);  //marker drop
+        console.log(rows);
+        //marker drop
+        rows.forEach(function(row) {
+          createMarker(row);
+        });
       }
     );
   });

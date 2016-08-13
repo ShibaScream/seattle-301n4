@@ -39,5 +39,27 @@ function initMap() {
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), options);
 
+  window.mapobj = map;
+}
+
+function createMarker(data) {
   // TODO: Follow the Google Maps API docs to create markers on the map based on the search options on the home page.
+  var position = {
+    lat: data.latitude,
+    lng: data.longitude
+  };
+  
+  var label = data.city + ', ' + data.state;
+  
+  var marker = new google.maps.Marker({
+    position: position,
+    animation: google.maps.Animation.DROP,
+    maps: window.mapobj,
+    title: label
+  });
+  
+  window.mapobj.panTo(position);
+  
+  marker.setMap(window.mapobj);
+  
 }
