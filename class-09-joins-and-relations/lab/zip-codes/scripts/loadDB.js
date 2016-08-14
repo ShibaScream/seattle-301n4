@@ -1,7 +1,7 @@
-(function(module) {
+(function (module) {
   var zips = {};
 
-  zips.createTable = function(callback) {
+  zips.createTable = function (callback) {
     webDB.execute(
       'CREATE TABLE IF NOT EXISTS zips (' +
       'id SERIAL PRIMARY KEY, ' +
@@ -18,18 +18,19 @@
     );
   };
 
-  zips.truncateTable = function(callback) {
+  zips.truncateTable = function (callback) {
     webDB.execute(
       'DELETE FROM zips;',
       callback
     );
   };
 
-  zips.loadDB = function() {
+  zips.loadDB = function () {
     zips.createTable();
 
-    webDB.execute('SELECT * FROM zips', function(rows) {
+    webDB.execute('SELECT * FROM zips', function (rows) {
       if (rows.length) {
+        module.searchView.populateFilters();
         return;
       } else {
         $.get('/data/zips.json')
@@ -43,12 +44,18 @@
                 }
               ],
               function(results) {
-
-              })
-            })
-          })
+                
+              });
+            });
+          
+            module.searchView.populateFilters();
+          
+          });
       }
-    })
-  }
+    });
+    
+  };
+  
   module.zips = zips;
-})(window)
+  
+})(window);

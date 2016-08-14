@@ -3,10 +3,11 @@
   var searchView = {};
 
   searchView.populateFilters = function () {
-    webDB.execute('SELECT state FROM zips;', function (rows) {
+    webDB.execute('SELECT DISTINCT state FROM zips;', function (rows) {
       searchView.loadAll('state-select', 'state', rows);
       // ADD event listener to state
       $('#state-select').on('change', function () {
+        $('#city-select').off();
         $('#city-select').val('');
         $('#city-select option:first-child').siblings().remove();
         var $state = $(this).val();
@@ -14,7 +15,7 @@
           webDB.execute(
             [
               {
-                'sql': 'SELECT city FROM zips WHERE state = ?;',
+                'sql': 'SELECT DISTINCT city FROM zips WHERE state = ?;',
                 'data': [$state]
               }
             ],
@@ -22,8 +23,10 @@
               searchView.loadAll('city-select', 'city', rows);
               $('#city-select').on('change', function () {
                 var $city = $(this).val();
-                //add marker drop
-                searchView.searchAndAddMarker(['city', 'state'], [$city, $state]);
+                if ($city !== '') {
+                  //add marker drop
+                  searchView.searchAndAddMarker(['city', 'state'], [$city, $state]);
+                }
               });
             }
           );
@@ -73,18 +76,19 @@
         }
       ],
 
-      function (rows) {
-        if (rows.length > 0) {
+      function (rows, result) {
+        if (result.rows.length > 0) {
           removeMarkers();
           rows.forEach(function (row) {
             createMarker(row);
           });
-        } else if (rows.length === 0) {
+        } else if (result.rows.length === 0) {
           alert("Hmm. Appears you don't have any results. :(");
         }
       }
     );
   };
 
-  searchView.populateFilters();
+  module.searchView = searchView;
+  
 })(window);
