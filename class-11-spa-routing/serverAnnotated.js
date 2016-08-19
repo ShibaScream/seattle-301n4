@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000;
 //instantiate express so we have access to the express app object and all its functionality
 var app = express();
 
-//call this function to handle any request to the GitHub domain
+// call this function to handle any request to the GitHub domain
 var proxyGitHub = function(request, response) {
   //request.params[0] = users/brookr/repos
   console.log('Routing GitHub request for', request.params[0]);
