@@ -1,12 +1,12 @@
 # Class 12 - REST and APIs
 
 ## Daily Plan
-1. 401 Projects
-2. Code Review
-3. REST & APIs
+1. Code Review
+2. REST
+3. APIs
+4. 301 Projects
 
-
-### REST Constraints
+### REST Constraints (more info)
 
 *From the [REST WIKI](https://en.wikipedia.org/wiki/Representational_state_transfer)*
 
