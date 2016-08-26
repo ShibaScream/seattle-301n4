@@ -3,7 +3,7 @@
 ## Daily Plan
 1. Code Review
 2. Heroku Deployment Demo
-3. Project Pitches - First round
+3. Firebase Deployment Demo
 
 ## Class videos
  [Part 1]()
